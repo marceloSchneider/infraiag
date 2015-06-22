@@ -1,0 +1,11 @@
+iag_file_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IagFileBundle:Default:index }
+    
+iag_file_upload:
+    path:   /file/upload
+    defaults: { _controller: IagFileBundle:File:load }
+
+iag_file_update:
+    path: /file/update
+    defaults: { _controller: IagFileBundle:File:update }

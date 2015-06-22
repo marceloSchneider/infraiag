@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets '@IagMenuBundle/Resources/public/styles.css' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{asset_url}}" />
+            {%  endstylesheets %}
+            
+            {% stylesheets '@IagHomeBundle/Resources/public/css/*' filter='cssrewrite' %}
+                <link rel="stylesheet" href="{{asset_url}}" />
+            {%  endstylesheets %}
+        {% endblock %}
+        
+        {% javascripts '@IagMenuBundle/Resources/public/*' %}
+                  <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id='cssmenu'>
+            <ul>
+               <li><a href='{{ path('iag_home_lista_lista') }}'><span>Home</span></a></li>
+               <li class='active has-sub'><a href='#'><span>Local</span></a>
+                  <ul>
+                      <li><a href='{{ path('bloco') }}'><span>Bloco</span></a></li>
+                      <li><a href='{{ path('pavimento') }}'><span>Pavimento</span></a></li>
+                      <li><a href='{{ path('sala') }}'><span>Sala</span></a></li>
+                  </ul>
+               </li>
+               <li class='active has-sub'><a href='#'><span>Equipamentos</span></a>
+                  <ul>
+                      <li><a href='{{ path('switchs') }}'><span>Switchs</span></a></li>
+                      <li><a href='{{ path('switchcommon') }}'><span>Pilha</span></a></li>
+                  </ul>
+               </li>
+               <li class='active has-sub'><a href='#'><span>Infra</span></a>
+                  <ul>
+                      <li><a href='{{ path('rack_index') }}'><span>Rack</span></a></li>
+                      <li><a href='{{ path('patch_index') }}'><span>Patch Panel</span></a></li>
+                      <li><a href='{{ path('voicepanel') }}'><span>Voice Panel</span></a></li>
+                  </ul>
+               </li>
+               <li class='active has-sub'><a href='#'><span>Rede</span></a>
+                  <ul>
+                      <li><a href='{{ path('ip') }}'><span>Ip</span></a></li>
+                      <li><a href='{{ path('vlan') }}'><span>Vlan</span></a></li>
+                  </ul>
+               </li>
+            </ul>
+        </div>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+{% extends '::bootstrap.html.twig' %}
+
+{% block body -%}
+    <h1>Novo Patch Pannel</h1>
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.numPortas) }}
+        {{ form_widget(form.numPortas, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.pilha) }}
+        {{ form_widget(form.pilha, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.rack) }}
+        {{ form_widget(form.rack, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('patch_index') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

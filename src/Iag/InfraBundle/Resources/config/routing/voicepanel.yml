@@ -1,0 +1,27 @@
+voicepanel:
+    path: /voicepanel/index
+    defaults: { _controller: IagInfraBundle:VoicePanel:index }
+    
+voicepanel_create:
+    path: /voicepanel/create
+    defaults: { _controller: IagInfraBundle:VoicePanel:create }
+    
+voicepanel_edit:
+    path: /voicepanel/edit{id}
+    defaults: { _controller: IagInfraBundle:VoicePanel:edit }
+    
+voicepanel_show:
+    path: /voicepanel/show{id}
+    defaults: { _controller: IagInfraBundle:VoicePanel:show }
+    
+voicepanel_new:
+    path: /voicepanel/new
+    defaults: { _controller: IagInfraBundle:VoicePanel:new }
+    
+voicepanel_update:
+    path: /voicepanel/update{id}
+    defaults: { _controller: IagInfraBundle:VoicePanel:update }
+    
+voicepanel_delete:
+    path: /voicepanel/delete{id}
+    defaults: { _controller: IagInfraBundle:VoicePanel:delete }

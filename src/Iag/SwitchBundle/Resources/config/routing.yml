@@ -1,0 +1,107 @@
+iag_switch_switchcommon:
+    resource: "@IagSwitchBundle/Resources/config/routing/switchcommon.yml"
+    prefix:   /switchcommon
+
+iag_switch_switchpilha:
+    resource: "@IagSwitchBundle/Resources/config/routing/switchpilha.yml"
+    prefix:   /switchpilha
+
+iag_switch_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IagSwitchBundle:Default:index }
+
+switchs_new:
+    path: /switch/new
+    defaults: { _controller: IagSwitchBundle:Switchs:new}
+    
+switchs_create:
+    path: /switch/create
+    defaults: { _controller: IagSwitchBundle:Switchs:create}
+    
+switchs:
+    path: /switch/index
+    defaults: { _controller: IagSwitchBundle:Switchs:index}
+    
+switchs_show:
+    path: /switch/show{id}
+    defaults: { _controller: IagSwitchBundle:Switchs:show}
+    
+switchs_delete:
+    path: /switch/delete{id}
+    defaults: { _controller: IagSwitchBundle:Switchs:delete}
+    
+switchs_edit:
+    path: /switch/edit{id}
+    defaults: { _controller: IagSwitchBundle:Switchs:edit} 
+    
+switchs_update:
+    path: /switch/update{id}
+    defaults: { _controller: IagSwitchBundle:Switchs:update}
+    
+    
+
+portaswitch_new:
+    path: /portaswitch/new
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:new}
+    
+portaswitch_create:
+    path: /portaswitch/create
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:create}
+    
+portaswitch:
+    path: /portaswitch/index
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:index}
+    
+portaswitch_show:
+    path: /portaswitch/show{id}
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:show}
+    
+portaswitch_delete:
+    path: /portaswitch/delete{id}
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:delete}
+    
+portaswitch_edit:
+    path: /portaswitch/edit{id}
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:edit} 
+    
+portaswitch_update:
+    path: /portaswitch/update{id}
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:update}
+    
+portaswitch_pswitch:
+    path: /portaswitch/pswitch{id}
+    defaults: { _controller: IagSwitchBundle:PortaSwitch:pswitch}
+    
+    
+    
+pilha_new:
+    path: /pilha/new
+    defaults: { _controller: IagSwitchBundle:Pilha:new}
+    
+pilha_create:
+    path: /pilha/create
+    defaults: { _controller: IagSwitchBundle:Pilha:create}
+    
+pilha:
+    path: /pilha/index
+    defaults: { _controller: IagSwitchBundle:Pilha:index}
+    
+pilha_show:
+    path: /pilha/show{id}
+    defaults: { _controller: IagSwitchBundle:Pilha:show}
+    
+pilha_delete:
+    path: /pilha/delete{id}
+    defaults: { _controller: IagSwitchBundle:Pilha:delete}
+    
+pilha_edit:
+    path: /pilha/edit{id}
+    defaults: { _controller: IagSwitchBundle:Pilha:edit} 
+    
+pilha_update:
+    path: /pilha/update{id}
+    defaults: { _controller: IagSwitchBundle:Pilha:update}
+    
+pilha_pswitch:
+    path: /pilha/pswitch{id}
+    defaults: { _controller: IagSwitchBundle:Pilha:pswitch}    

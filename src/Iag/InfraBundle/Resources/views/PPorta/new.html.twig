@@ -1,0 +1,38 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Novo Ponto
+{% endblock %}
+{% block body -%}
+     {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.numero) }}
+        {{ form_widget(form.numero, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.patch) }}
+        {{ form_widget(form.patch, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.porta) }}
+        {{ form_widget(form.porta, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.isWireless) }}
+        {{ form_widget(form.isWireless, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.isIpCamera) }}
+        {{ form_widget(form.isIpCamera, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.sala) }}
+        {{ form_widget(form.sala, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.voice) }}
+        {{ form_widget(form.voice, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('pporta') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

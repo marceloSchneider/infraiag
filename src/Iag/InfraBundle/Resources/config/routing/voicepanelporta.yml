@@ -1,0 +1,32 @@
+   
+voiceporta:
+    path: /voiceporta/index
+    defaults: { _controller: IagInfraBundle:VoicePorta:index }
+    
+voiceporta_create:
+    path: /voiceporta/create
+    defaults: { _controller: IagInfraBundle:VoicePorta:create }
+    
+voiceporta_edit:
+    path: /voiceporta/edit{id}
+    defaults: { _controller: IagInfraBundle:VoicePorta:edit }
+    
+voiceporta_show:
+    path: /voiceporta/show{id}
+    defaults: { _controller: IagInfraBundle:VoicePorta:show }
+    
+voiceporta_new:
+    path: /voiceporta/new
+    defaults: { _controller: IagInfraBundle:VoicePorta:new }
+    
+voiceporta_update:
+    path: /voiceporta/update{id}
+    defaults: { _controller: IagInfraBundle:VoicePorta:update }
+    
+voiceporta_delete:
+    path: /voiceporta/delete{id}
+    defaults: { _controller: IagInfraBundle:VoicePorta:delete }    
+    
+voiceporta_portas:
+    path: /voiceporta/portas{id}
+    defaults: { _controller: IagInfraBundle:VoicePorta:portas }

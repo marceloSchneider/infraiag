@@ -1,0 +1,139 @@
+{% extends '::bootstrap.html.twig' %}
+
+{% block javascripts %}  
+    {{ parent() }}
+    {% javascripts '@IagHomeBundle/Resources/public/js/limparformulario.js' %}  
+        <script src="{{ asset_url }}"></script>  
+    {% endjavascripts %}  
+{% endblock %} 
+
+
+{% block titulo %}
+    Lista de Pontos
+{% endblock %}
+{% block body -%}
+        {{ form_start(form) }}  
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Filtros
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Local</h3>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ form_label(form.bloco) }}: <br />{{ form_widget(form.bloco) }}</li>
+                                <li class="list-group-item">{{ form_label(form.andar) }}:<br />{{ form_widget(form.andar) }}</li>
+                                <li class="list-group-item">{{ form_label(form.sala) }}:<br />{{ form_widget(form.sala) }}</li>
+                            </ul> 
+                        </div>                
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Infra</h3>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ form_label(form.salaRack) }}:<br />{{ form_widget(form.salaRack) }}</li>
+                                <li class="list-group-item">{{ form_label(form.patch) }}:<br />{{ form_widget(form.patch) }}</li>
+                                <li class="list-group-item">{{ form_label(form.ponto) }}:<br />{{ form_widget(form.ponto) }}</li>
+                            </ul> 
+                        </div>                
+                    </div>               
+
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Telefonia</h3>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ form_label(form.telefonia) }}:<br />{{ form_widget(form.telefonia) }}</li>
+                                <li class="list-group-item">{{ form_label(form.numVoicePanel) }}:<br />{{ form_widget(form.numVoicePanel) }}</li>
+                                <li class="list-group-item">{{ form_label(form.central) }}:<br />{{ form_widget(form.central) }}</li>
+                            </ul> 
+                        </div>                
+                    </div>        
+
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Rede</h3>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item">{{ form_label(form.nomeSwitch) }}:<br />{{ form_widget(form.nomeSwitch)}}</li>
+                                <li class="list-group-item">{{ form_label(form.idSwitch) }}:<br />{{ form_widget(form.idSwitch) }}</li>
+                                <li class="list-group-item">{{ form_label(form.porta) }}:<br />{{ form_widget(form.porta) }}</li>
+                            </ul> 
+                        </div>                
+                    </div>                                   
+                </div>
+                                {{ form_widget(form.submit, {'attr': {'class': 'btn btn-sm btn-success' } }) }} <a href="#" id="limpar-formulario" class="btn btn-sm btn-warning">Limpar o Formulário</a> 
+                    {{ form_end(form, {'render_rest': false}) }}
+              </div>
+            </div>
+        </div>
+        
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover container-fluid">
+            <thead style="font-size: 10pt;">
+                <tr>
+                    <th>Bloco</th>
+                    <th>Andar</th>
+                    <th>Sala</th>
+                    <th>Patch Panel</th>
+                    <th>Ponto</th>
+                    {% if analista %}<th>Status</th>{% endif %}
+                  {% if manutencao %}  <th>Ramal</th> {% endif %}
+                    {% if manutencao %}<th>Voice Panel</th> {% endif %}
+                  <!--  <th>Voice Panel (P-108)</th> -->
+                   <!-- <th>Voice Panel (A04)</th> -->
+                    {% if analista %}<th>Hostname</th>{% endif %}
+                    {% if analista %}<th>IP do Switch</th>{% endif %}
+                    {% if analista %}<th>Porta do Switch</th>{% endif %}
+                    {% if analista %}<th style="width: 1px;">Wireless</th>{% endif %}
+                    {% if analista %}<th>Camera</th>{% endif %}
+                    {% if analista %}<th>VLAN</th>{% endif %}
+                    <th>Sala Rack</th>
+                    {% if analista %}<th>Id do Switch</th>{% endif %}
+                </tr>
+            </thead>
+            <tbody style="font-size: 10pt;" class="tab-content">
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('bloco_edit', { 'id':entity.blocoId }) }}">{{ entity.bloco }}</a></td>
+                    <td><a href="{{ path('pavimento_edit', { 'id':entity.andarId })}}">{{ entity.andar }}</a></td>
+                    <td><a href="{{ path('sala_edit', { 'id':entity.salaId }) }}">{{ entity.sala }}</a></td>
+                    <td><a href="{{ path('patch_edit', { 'id':entity.patchId }) }}">{{ entity.patch }}</a></td>
+                    <td><a href="{{ path('pporta_edit', { 'id':entity.statusId }) }}">{{ entity.ponto }}</a></td>
+                    {% if analista %}<td><a href="{{ path('patch_edit', { 'id':entity.patchId }) }}">{{ entity.status }}</td>{% endif %}
+                {% if manutencao %}    <td>{% if entity.telefonia %}<a href="{{ path('voiceporta_edit', { 'id':entity.telefoniaId }) }}">{{ entity.telefonia }}</a>{% endif %}</td> {% endif %}
+                  <!--  <td>{{ entity.numVoicePanel }}</td> -->
+              {% if manutencao %} <td>{{ entity.numVoicePanel }}{% if entity.central %}/{{ entity.central }}{% endif %}{% if entity.distribuicao %}/{{ entity.distribuicao }}{% endif %}</td> {% endif %}
+                  <!--  <td>{% if entity.distribuicao %}{{ entity.distribuicao }}{% endif %}</td> -->
+                {% if analista %}
+                    <td>{% if entity.nomeSwitch %}<a href="{{ path('switchs_edit', { 'id':entity.switchId }) }}">{{ entity.nomeSwitch }}</a>{% endif %}</td>
+                    <td>{% if entity.ip %}<a href="{{ path('ip_edit', { 'id':entity.ipId }) }}">{{ entity.ip }}</a>{% endif %}</td>
+                    <td>{% if entity.porta %}<a href="{{ path('portaswitch_edit', { 'id':entity.portaId }) }}">{{ entity.porta }}</a></a>{% endif %}</td>
+                    <td><a href="{{ path('pporta_edit', { 'id':entity.statusId }) }}">{% if entity.wireless == 0 %}N{% else %}S{% endif %}</a></td>
+                    <td><a href="{{ path('pporta_edit', { 'id':entity.statusId }) }}">{% if entity.ipCamera == 0 %}N{% else %}S{% endif %}</a></td>
+                    <td>{% if entity.vlan and entity.portaId %}<a href="{{ path('portaswitch_edit', { 'id':entity.portaId }) }}">{{ entity.vlan }}</a>{% endif %}</td>
+                {% endif %}
+                    <td><a href="{{ path('sala_edit', { 'id':entity.salaRackId }) }}">{{ entity.salaRack }}</a></td>
+                {% if analista %}<td>{% if entity.idSwitch %}<a href="{{ path('switchs_edit', { 'id':entity.switchId }) }}">{{ entity.idSwitch }}</a>{% endif %}</td>{% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    {% endblock %}
+ 

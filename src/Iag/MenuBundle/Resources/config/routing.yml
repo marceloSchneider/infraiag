@@ -1,0 +1,3 @@
+iag_menu_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IagMenuBundle:Default:index }

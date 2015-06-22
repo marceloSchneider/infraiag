@@ -1,0 +1,59 @@
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Banco de dados Infra</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ path('iag_home_lista_lista') }}">Home</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Local <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('bloco') }}">Bloco</a></li>
+                            <li><a href="{{ path('pavimento') }}">Pavimento</a></li>
+                            <li><a href="{{ path('sala') }}">Sala</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Equipamentos <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('switchs') }}">Switchs</a></li>
+                            <li><a href="{{ path('switchcommon') }}">Pilha</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Infra <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('rack_index') }}">Rack</a></li>
+                            <li><a href="{{ path('patch_index') }}">Patch Panel</a></li>
+                            <li><a href="{{ path('voicepanel') }}">Voice Panel</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Rede<span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('ip') }}">Ip</a></li>
+                            <li><a href="{{ path('vlan') }}">Vlan</a></li>
+                          </ul>
+                        </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administração<span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ path('iag_file_upload') }}">Upload de dados</a></li>
+                          </ul>
+                        </li>
+                        {% endif %}
+                      </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+          </nav>

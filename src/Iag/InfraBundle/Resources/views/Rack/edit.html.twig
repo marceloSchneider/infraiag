@@ -1,0 +1,33 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Editar Rack
+{% endblock %}
+{% block body -%}
+
+    
+
+    {{ form_start(edit_form) }}
+    <div class="form-group">
+        {{ form_label(edit_form.quantidadeU) }}
+        {{ form_widget(edit_form.quantidadeU, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(edit_form.sala) }}
+        {{ form_widget(edit_form.sala, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(edit_form.atendeLocais) }}
+        {{ form_widget(edit_form.atendeLocais, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(edit_form.identificacao) }}
+        {{ form_widget(edit_form.identificacao, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+     {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-sm btn-success' } }) }} <a href="{{ path('rack_index') }}" class="btn btn-sm btn-info">Voltar para a Lista</a>
+    
+    {{ form_end(edit_form) }}
+    
+   {{ form_start(delete_form) }}
+        {{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-sm btn-danger' } }) }} 
+    {{ form_end(delete_form) }}  
+{% endblock %}

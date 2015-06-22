@@ -1,0 +1,33 @@
+<DOCTYPE html>  
+    <html>  
+    <head>  
+        <title>{% block title %}Infraestrutura de rede{% endblock %}</title>  
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+      
+        {% block stylesheets %}  
+            {% stylesheets '@bootstrap_less' combine=true %}  
+                <link href="{{ asset_url }}" type="text/css" rel="stylesheet">  
+            {% endstylesheets %}  
+        {% endblock %}  
+      
+    </head>  
+    <body>
+        
+        {% include 'menu.html.twig'%}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row page-header"><h1>{% block titulo %}{% endblock %}</h1></div>
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+          
+      
+        {% block javascripts %}  
+            {% javascripts '@jquery_js' '@bootstrap_js' filter='?yui_js' combine=true %}  
+                <script src="{{ asset_url }}"></script>  
+            {% endjavascripts %}  
+        {% endblock %}  
+    </body>  
+    </html>  

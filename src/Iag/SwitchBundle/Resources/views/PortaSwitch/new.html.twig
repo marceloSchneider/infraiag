@@ -1,0 +1,16 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Adiionar Porta ao Switch
+{% endblock %}
+{% block body -%}
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('portaswitch') }}">
+            Voltar para a lista
+        </a>
+    </li>
+</ul>
+{% endblock %}

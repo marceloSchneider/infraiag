@@ -1,0 +1,139 @@
+iag_infra_voicepanelporta:
+    resource: "@IagInfraBundle/Resources/config/routing/voicepanelporta.yml"
+    prefix:   /
+
+iag_infra_voicepanel:
+    resource: "@IagInfraBundle/Resources/config/routing/voicepanel.yml"
+    prefix:   /
+
+
+iag_infra_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IagInfraBundle:Default:index }
+
+rack_index:
+    path: /rack/index
+    defaults: { _controller: IagInfraBundle:Rack:index }
+    
+rack_create:
+    path: /rack/create
+    defaults: { _controller: IagInfraBundle:Rack:create }
+    
+rack_edit:
+    path: /rack/edit{id}
+    defaults: { _controller: IagInfraBundle:Rack:edit }
+    
+rack_show:
+    path: /rack/show{id}
+    defaults: { _controller: IagInfraBundle:Rack:show }
+    
+rack_new:
+    path: /rack/new
+    defaults: { _controller: IagInfraBundle:Rack:new }
+    
+rack_update:
+    path: /rack/update{id}
+    defaults: { _controller: IagInfraBundle:Rack:update }
+    
+rack_delete:
+    path: /rack/delete{id}
+    defaults: { _controller: IagInfraBundle:Rack:delete }
+    
+#Route for Patch
+
+patch_index:
+    path: /patch/index
+    defaults: { _controller: IagInfraBundle:Patch:index }
+    
+patch_create:
+    path: /patch/create
+    defaults: { _controller: IagInfraBundle:Patch:create }
+    
+patch_edit:
+    path: /patch/edit{id}
+    defaults: { _controller: IagInfraBundle:Patch:edit }
+    
+patch_show:
+    path: /patch/show{id}
+    defaults: { _controller: IagInfraBundle:Patch:show }
+    
+patch_new:
+    path: /patch/new
+    defaults: { _controller: IagInfraBundle:Patch:new }
+    
+patch_update:
+    path: /patch/update{id}
+    defaults: { _controller: IagInfraBundle:Patch:update }
+    
+patch_delete:
+    path: /patch/delete{id}
+    defaults: { _controller: IagInfraBundle:Patch:delete }
+    
+#Route for PPorta
+
+pporta:
+    path: /pporta/index
+    defaults: { _controller: IagInfraBundle:PPorta:index }
+    
+pporta_create:
+    path: /pporta/create
+    defaults: { _controller: IagInfraBundle:PPorta:create }
+    
+pporta_edit:
+    path: /pporta/edit{id}
+    defaults: { _controller: IagInfraBundle:PPorta:edit }
+    
+pporta_show:
+    path: /pporta/show{id}
+    defaults: { _controller: IagInfraBundle:PPorta:show }
+    
+pporta_new:
+    path: /pporta/new
+    defaults: { _controller: IagInfraBundle:PPorta:new }
+    
+pporta_update:
+    path: /pporta/update{id}
+    defaults: { _controller: IagInfraBundle:PPorta:update }
+    
+pporta_delete:
+    path: /pporta/delete{id}
+    defaults: { _controller: IagInfraBundle:PPorta:delete }
+    
+pporta_portas:
+    path: /pporta/portas{id}
+    defaults: { _controller: IagInfraBundle:PPorta:portas }
+    
+#Route for Espelhamento
+
+espelhamento:
+    path: /espelhamento/index
+    defaults: { _controller: IagInfraBundle:Espelhamento:index }
+    
+espelhamento_create:
+    path: /espelhamento/create
+    defaults: { _controller: IagInfraBundle:Espelhamento:create }
+    
+espelhamento_edit:
+    path: /espelhamento/edit{id}
+    defaults: { _controller: IagInfraBundle:Espelhamento:edit }
+    
+espelhamento_show:
+    path: /espelhamento/show{id}
+    defaults: { _controller: IagInfraBundle:Espelhamento:show }
+    
+espelhamento_new:
+    path: /espelhamento/new
+    defaults: { _controller: IagInfraBundle:Espelhamento:new }
+    
+espelhamento_update:
+    path: /espelhamento/update{id}
+    defaults: { _controller: IagInfraBundle:Espelhamento:update }
+    
+espelhamento_delete:
+    path: /espelhamento/delete{id}
+    defaults: { _controller: IagInfraBundle:Espelhamento:delete }
+    
+espelhar_create:
+    path: /espelhar/index
+    defaults: { _controller: IagInfraBundle:Espelhar:index }
+    

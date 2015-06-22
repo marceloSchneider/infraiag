@@ -1,0 +1,18 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Editar Switch
+{% endblock %}
+{% block body -%}
+    
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('switchpilha') }}">
+            Voltar para a Lista
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

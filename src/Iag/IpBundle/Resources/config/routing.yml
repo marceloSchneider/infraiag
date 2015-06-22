@@ -1,0 +1,31 @@
+iag_ip_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IagIpBundle:Default:index }
+
+ip_new:
+    path: /ip/new
+    defaults: { _controller: IagIpBundle:Ip:new}
+    
+ip_create:
+    path: /ip/create
+    defaults: { _controller: IagIpBundle:Ip:create}
+    
+ip:
+    path: /ip/index
+    defaults: { _controller: IagIpBundle:Ip:index}
+    
+ip_show:
+    path: /ip/show{id}
+    defaults: { _controller: IagIpBundle:Ip:show}
+    
+ip_delete:
+    path: /ip/delete{id}
+    defaults: { _controller: IagIpBundle:Ip:delete}
+    
+ip_edit:
+    path: /ip/edit{id}
+    defaults: { _controller: IagIpBundle:Ip:edit} 
+    
+ip_update:
+    path: /ip/update{id}
+    defaults: { _controller: IagIpBundle:Ip:update}

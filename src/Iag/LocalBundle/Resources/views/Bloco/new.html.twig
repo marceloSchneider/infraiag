@@ -1,0 +1,16 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Novo Bloco
+{% endblock %}
+{% block body -%}
+    
+
+    
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.nome) }}
+        {{ form_widget(form.nome, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('bloco') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

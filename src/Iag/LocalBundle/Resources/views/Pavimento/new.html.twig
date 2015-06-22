@@ -1,0 +1,19 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Novo Pavimento
+{% endblock %}
+{% block body -%}
+    
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.nome) }}
+        {{ form_widget(form.nome, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.bloco) }}
+        {{ form_widget(form.bloco, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('pavimento') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

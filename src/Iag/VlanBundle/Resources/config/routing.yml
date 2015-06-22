@@ -1,0 +1,31 @@
+iag_vlan_homepage:
+    path:     /vlan/hello/{name}
+    defaults: { _controller: IagVlanBundle:Default:index }
+    
+vlan_new:
+    path: /vlan/new
+    defaults: { _controller: IagVlanBundle:Vlan:new}
+    
+vlan_create:
+    path: /vlan/create
+    defaults: { _controller: IagVlanBundle:Vlan:create}
+    
+vlan:
+    path: /vlan/index
+    defaults: { _controller: IagVlanBundle:Vlan:index}
+    
+vlan_show:
+    path: /vlan/show{id}
+    defaults: { _controller: IagVlanBundle:Vlan:show}
+    
+vlan_delete:
+    path: /vlan/delete{id}
+    defaults: { _controller: IagVlanBundle:Vlan:delete}
+    
+vlan_edit:
+    path: /vlan/edit{id}
+    defaults: { _controller: IagVlanBundle:Vlan:edit} 
+    
+vlan_update:
+    path: /vlan/update{id}
+    defaults: { _controller: IagVlanBundle:Vlan:update}

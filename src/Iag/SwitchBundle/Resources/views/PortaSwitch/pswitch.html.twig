@@ -1,0 +1,48 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Portas do switch {{ switch.switchCommon.hostname }} posição {{ switch.posicaoPilha }}
+{% endblock %}
+{% block body %}
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Número da porta</th>
+                <th>POE</th>
+                <th>Stauts do POE</th>
+                <th>Patch Panel</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for porta in portas %}
+            <tr>
+                <td><a href="{{ path('portaswitch_show', { 'id': porta.id }) }}">{{ porta.id }}</a></td>
+                <td>{{ porta.numPorta }}</td>
+                <td>{{ porta.isPOE }}</td>
+                <td>{{ porta.pOEStatus }}</td>
+                <td>{% if porta.pporta %}{{ porta.pporta }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('portaswitch_show', { 'id': porta.id }) }}">Detalhar</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('portaswitch_edit', { 'id': porta.id }) }}">Editar</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('switchs') }}">
+                Voltar para a lista de switchs
+            </a>
+        </li>
+    </ul>
+{% endblock %}

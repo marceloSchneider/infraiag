@@ -1,0 +1,30 @@
+switchpilha:
+    path:     /
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:index" }
+
+switchpilha_show:
+    path:     /{id}/show
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:show" }
+
+switchpilha_new:
+    path:     /new
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:new" }
+
+switchpilha_create:
+    path:     /create
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:create" }
+    requirements: { _method: post }
+
+switchpilha_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:edit" }
+
+switchpilha_update:
+    path:     /{id}/update
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:update" }
+    requirements: { _method: post|put }
+
+switchpilha_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IagSwitchBundle:SwitchPilha:delete" }
+    requirements: { _method: post|delete }

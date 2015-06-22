@@ -1,0 +1,27 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Nova Sala
+{% endblock %}
+{% block body -%}
+    
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.numero) }}
+        {{ form_widget(form.numero, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.pavimento) }}
+        {{ form_widget(form.pavimento, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.bloco) }}
+        {{ form_widget(form.bloco, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.rackAtendente) }}
+        {{ form_widget(form.rackAtendente, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('sala') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends '::bootstrap.html.twig' %}
+
+{% block javascripts %}
+    
+    {% javascripts '@IagHomeBundle/Resources/public/js/jquery/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    
+    {% javascripts '@IagSwitchBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+{% endblock %}
+{% block titulo %}
+    Adicionar Switch
+{% endblock %}
+{% block body -%}
+    
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.switchCommon) }}
+        {{ form_widget(form.switchCommon, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.pilha) }}
+        {{ form_widget(form.pilha, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.identificacao) }}
+        {{ form_widget(form.identificacao, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.numPortas) }}
+        {{ form_widget(form.numPortas, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+     <div class="form-group">
+        {{ form_label(form.isGiga) }}
+        {{ form_widget(form.isGiga) }}
+    </div>
+     <div class="form-group">
+        {{ form_label(form.marca) }}
+        {{ form_widget(form.marca, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+     <div class="form-group">
+        {{ form_label(form.patrimonio) }}
+        {{ form_widget(form.patrimonio, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+     <div class="form-group">
+        {{ form_label(form.posicaoPilha) }}
+        {{ form_widget(form.posicaoPilha, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('switchs') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+{% block titulo %}
+    Locais cadastrados
+{% endblock %}
+{% block body -%}
+    
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Pavimento</th>
+                <th>Bloco</th>
+                <th>Sala</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for local in locais %}
+            <tr>
+                <td>{{ local.pavimento }}</td>
+                <td>{{ local.bloco }}</td>
+                <td>{{ local.sala }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

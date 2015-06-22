@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+    
+    {% javascripts '@IagHomeBundle/Resources/public/js/jquery/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    {% javascripts '@IagHomeBundle/Resources/public/js/jqueryUi/jquery-ui.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    
+    {% javascripts '@IagSwitchBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+{% endblock %}
+
+{% block titulo %}
+    Nova Pilha
+{% endblock %}
+{% block body -%}
+    
+    
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.hostname) }}
+        {{ form_widget(form.hostname, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.ip) }}
+        {{ form_widget(form.ip, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.rack) }}
+        {{ form_widget(form.rack, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_end(form) }}
+    
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('pilha') }}">
+            Voltar para a lista
+        </a>
+    </li>
+</ul>
+{% endblock %}

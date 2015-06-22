@@ -1,0 +1,25 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Nova Pilha
+{% endblock %}
+{% block body -%}
+    
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.hostname) }}
+        {{ form_widget(form.hostname, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.ip) }}
+        {{ form_widget(form.ip, { 'attr': { 'class': 'form-control' } }) }}
+    </div>  
+<!--
+    <div class="form-group">
+        {{ form_label(form.rack) }}
+        {{ form_widget(form.rack, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+-->
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('switchcommon') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

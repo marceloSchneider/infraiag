@@ -1,0 +1,35 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Nova Porta Voice Panel
+{% endblock %}
+{% block body -%}
+    
+    
+     {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.numero) }}
+        {{ form_widget(form.numero, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.central) }}
+        {{ form_widget(form.central, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.distribuicao) }}
+        {{ form_widget(form.distribuicao, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.ramal) }}
+        {{ form_widget(form.ramal, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.voicePanel) }}
+        {{ form_widget(form.voicePanel, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.pporta) }}
+        {{ form_widget(form.pporta, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('voiceporta') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

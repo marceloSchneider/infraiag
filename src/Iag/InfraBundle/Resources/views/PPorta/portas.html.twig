@@ -1,0 +1,27 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Portas do Patch Panel
+{% endblock %}
+{% block body -%}
+    
+    <table class="table table-striped table-bordered">
+        <thead>
+            <th>Id</th>
+            <th>Número da porta</th>
+            <th>Patch Panel</th>
+            <th>Ponto na sala</th>
+            <th>porta</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{{ path('pporta_portas', { 'id': portas.id }) }}">{{ portas.id }}</a></td>
+                <td>{{ portas.numero }}</td>
+                <td>{{ portas.patch }}</td>
+                <td>{{ portas.ponto }}</td>
+                <td>{{ portas.porta }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+{% endblock %}
+    

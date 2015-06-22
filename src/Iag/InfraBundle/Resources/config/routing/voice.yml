@@ -1,0 +1,30 @@
+voice:
+    path:     /
+    defaults: { _controller: "IagInfraBundle:Voice:index" }
+
+voice_show:
+    path:     /{id}/show
+    defaults: { _controller: "IagInfraBundle:Voice:show" }
+
+voice_new:
+    path:     /new
+    defaults: { _controller: "IagInfraBundle:Voice:new" }
+
+voice_create:
+    path:     /create
+    defaults: { _controller: "IagInfraBundle:Voice:create" }
+    requirements: { _method: post }
+
+voice_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IagInfraBundle:Voice:edit" }
+
+voice_update:
+    path:     /{id}/update
+    defaults: { _controller: "IagInfraBundle:Voice:update" }
+    requirements: { _method: post|put }
+
+voice_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IagInfraBundle:Voice:delete" }
+    requirements: { _method: post|delete }

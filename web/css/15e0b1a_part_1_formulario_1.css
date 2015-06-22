@@ -1,0 +1,18 @@
+#formulario {
+    margin-left: 1%; 
+    float: left;
+}
+
+.clear-css {
+    
+}
+
+#formulario li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+#formulario fieldset {
+    width: 100px;
+    float: left;
+}

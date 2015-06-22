@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+    
+    {% javascripts '@IagHomeBundle/Resources/public/js/jquery/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    
+    {% javascripts '@IagInfraBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+{% endblock %}
+
+{% block body -%}
+    <div id="form-filter" >
+        {{ form(form) }}
+        {% if pontos is defined %}
+            <table>
+            {% for ponto in pontos %}
+                <tr>
+                    <td>{{ ponto.numPorta }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% endif%}
+    </div>
+{% endblock %}
+

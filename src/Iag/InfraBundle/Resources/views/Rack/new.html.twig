@@ -1,0 +1,29 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Novo Rack
+{% endblock %}
+{% block body -%}
+    
+    
+    
+    
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.quantidadeU) }}
+        {{ form_widget(form.quantidadeU, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.sala) }}
+        {{ form_widget(form.sala, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    <div class="form-group">
+        {{ form_label(form.atendeLocais) }}
+        {{ form_widget(form.atendeLocais, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.identificacao) }}
+        {{ form_widget(form.identificacao, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('rack_index') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

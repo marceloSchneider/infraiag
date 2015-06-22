@@ -1,0 +1,19 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Adicionar IP
+{% endblock %}
+{% block body -%}
+    
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.endereco) }}
+        {{ form_widget(form.endereco, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.vlan) }}
+        {{ form_widget(form.vlan, { 'attr': { 'class': 'form-control' } }) }}
+    </div>    
+    {{ form_widget(form.submit, { 'attr': { 'class': 'btn btn-sm btn-success' } } ) }} <a href="{{ path('ip') }}" class="btn btn-sm btn-info">Voltar para a lista</a>
+    {{ form_end(form) }}
+{% endblock %}

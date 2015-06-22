@@ -1,0 +1,30 @@
+switchcommon:
+    path:     /
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:index" }
+
+switchcommon_show:
+    path:     /{id}/show
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:show" }
+
+switchcommon_new:
+    path:     /new
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:new" }
+
+switchcommon_create:
+    path:     /create
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:create" }
+    requirements: { _method: post }
+
+switchcommon_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:edit" }
+
+switchcommon_update:
+    path:     /{id}/update
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:update" }
+    requirements: { _method: post|put }
+
+switchcommon_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IagSwitchBundle:SwitchCommon:delete" }
+    requirements: { _method: post|delete }

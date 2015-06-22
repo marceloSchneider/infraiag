@@ -1,0 +1,20 @@
+{% extends '::bootstrap.html.twig' %}
+{% block titulo %}
+    Editar Bloco
+{% endblock %}
+{% block body -%}
+    
+    
+    {{ form_start(edit_form) }}
+    <div class="form-group">
+        {{ form_label(edit_form.nome) }}
+        {{ form_widget(edit_form.nome, { 'attr': { 'class': 'form-control' } }) }}
+    </div>
+     {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-sm btn-success' } }) }} <a href="{{ path('bloco') }}" class="btn btn-sm btn-info">Voltar para a Lista</a>
+    
+    {{ form_end(edit_form) }}
+    
+   {{ form_start(delete_form) }}
+        {{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-sm btn-danger' } }) }} 
+    {{ form_end(delete_form) }}  
+{% endblock %}

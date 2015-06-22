@@ -1,0 +1,90 @@
+iag_local_homepage:
+    path:     /local
+    defaults: { _controller: IagLocalBundle:Local:index }
+    
+#Route for Sala
+sala:
+    path:   /sala/index
+    defaults: { _controller: IagLocalBundle:Sala:index }
+    
+sala_show:
+    path: /sala/show{id}
+    defaults: { _controller: IagLocalBundle:Sala:show }
+
+sala_create:
+    path: /sala/create
+    defaults: { _controller: IagLocalBundle:Sala:create }
+
+sala_new:
+    path: /sala/new
+    defaults: { _controller: IagLocalBundle:Sala:new }
+    
+sala_edit:
+    path: /sala/edit{id}
+    defaults: { _controller: IagLocalBundle:Sala:edit }
+    
+sala_update:
+    path: /sala/update{id}
+    defaults: { _controller: IagLocalBundle:Sala:update }
+    
+sala_delete:
+    path: /sala/delete{id}
+    defaults: { _controller: IagLocalBundle:Sala:delete }
+    
+#Route for Bloco
+bloco:
+    path:   /bloco/index
+    defaults: { _controller: IagLocalBundle:Bloco:index }
+    
+bloco_show:
+    path: /bloco/show{id}
+    defaults: { _controller: IagLocalBundle:Bloco:show }
+
+bloco_create:
+    path: /bloco/create
+    defaults: { _controller: IagLocalBundle:Bloco:create }
+
+bloco_new:
+    path: /bloco/new
+    defaults: { _controller: IagLocalBundle:Bloco:new }
+    
+bloco_edit:
+    path: /bloco/edit{id}
+    defaults: { _controller: IagLocalBundle:Bloco:edit }
+    
+bloco_update:
+    path: /bloco/update{id}
+    defaults: { _controller: IagLocalBundle:Bloco:update }
+    
+bloco_delete:
+    path: /bloco/delete{id}
+    defaults: { _controller: IagLocalBundle:Bloco:delete }
+    
+#Route for Pavimento
+pavimento:
+    path:   /pavimento/index
+    defaults: { _controller: IagLocalBundle:Pavimento:index }
+    
+pavimento_show:
+    path: /pavimento/show{id}
+    defaults: { _controller: IagLocalBundle:Pavimento:show }
+
+pavimento_create:
+    path: /pavimento/create
+    defaults: { _controller: IagLocalBundle:Pavimento:create }
+
+pavimento_new:
+    path: /pavimento/new
+    defaults: { _controller: IagLocalBundle:Pavimento:new }
+    
+pavimento_edit:
+    path: /pavimento/edit{id}
+    defaults: { _controller: IagLocalBundle:Pavimento:edit }
+    
+pavimento_update:
+    path: /pavimento/update{id}
+    defaults: { _controller: IagLocalBundle:Pavimento:update }
+    
+pavimento_delete:
+    path: /pavimento/delete{id}
+    defaults: { _controller: IagLocalBundle:Pavimento:delete }

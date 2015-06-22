@@ -1,0 +1,77 @@
+{% extends '::base.html.twig' %}
+
+{% block javascripts %}
+        {% javascripts '@IagHomeBundle/Resources/public/js/jquery/*' %}
+                  <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    
+        {% javascripts '@IagHomeBundle/Resources/public/js/fielter.js' %}
+                  <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+{% endblock %}
+
+{% block body -%}
+    <h1>Lista Geral</h1>
+    
+    {{ form(form) }}
+    
+    <div id="rolagem">
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Bloco</th>
+                <th>Andar</th>
+                <th>Sala</th>
+                <th>PatchPanel</th>
+                <th>Ponto</th>
+                <th>Status</th>
+                <th>Telefonia</th>
+                <th>Número do voice Panel</th>
+                <th>Nome do switch</th>
+                <th>IP do switch</th>
+                <!--<th>Posição na Pilha</th>-->
+                <th>Porta do Switch</th>
+                <th>Wirelless</th>
+                <th>IP Camera</th>
+                <th>Vlan</th>
+                <th>Sala do Rack</th>
+                <th>Identificação do Rack</th>
+                <th>Identificação do switch</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{% if entity.sala %}<a href="{{ path('sala_edit', { 'id': entity.sala.id }) }}">{{ entity.sala.pavimento.bloco.nome }}</a>{% endif %}</td>
+                <td>{% if entity.sala %}<a href="{{ path('sala_edit', { 'id': entity.sala.id }) }}">{{ entity.sala.pavimento.nome }}</a>{% endif %}</td>
+                <td>{% if entity.sala.numero %}<a href="{{ path('sala_edit', { 'id': entity.sala.id }) }}">{{ entity.sala.numero }}</a>{% else %}Null{% endif %}</td>
+                <td>{{ entity.patch.pilha }}</td>
+                <td>{% if entity %}<a href="{{ path('pporta_edit', { 'id': entity.id }) }}">{{ entity }}</a>{% else %}NA{% endif %}</td>
+                <td>{% if entity.porta %}A{% else %}NA{% endif %}</td>
+                <td>{% if entity.voice %}<a href="{{ path('voiceporta_edit', { 'id': entity.voice.id }) }}">{{ entity.voice.ramal }}{% endif %}</td> 
+                <td>{% if entity.voice %}{{ entity.voice.numero }}{% endif %}</td>
+                
+                <td>{% if entity.porta %}<a href="{{ path('switchs_edit', { 'id': entity.porta.switch.id }) }}">{{ entity.porta.switch.hostname }}</a>{% endif %}</td>
+                <td>{% if entity.porta %}<a href="{{ path('switchs_edit', { 'id': entity.porta.switch.id }) }}">{{ entity.porta.switch.ip }}</a>{% endif %}</td>
+                <!--<td>{% if entity.porta %}<a href="{{ path('switchs_edit', { 'id': entity.porta.switch.id }) }}">{{ entity.porta.switch.posicaoPilha }}</a>{% endif %}</td>-->
+                <td>{% if entity.porta %}<a href="{{ path('pporta_edit', { 'id': entity.id }) }}">{{ entity.porta }}</a>{% endif %}</td>
+                <td>{% if entity.isWireless == true %}<a href="{{ path('pporta_edit', { 'id': entity.id }) }}">S</a>{% else %} {% endif %}</td>
+                <td>{% if entity.isIpCamera == true %}<a href="{{ path('pporta_edit', { 'id': entity.id }) }}">S</a>{% else %} {% endif %}</td>
+                <td>
+                    {% if entity.porta %}
+                        <a href="{{ path('portaswitch_edit', { 'id': entity.porta.id }) }}">
+                        {% for endereco in entity.porta.vlan %}
+                            {{ endereco }}
+                        {% endfor %}
+                        </a>
+                    {% endif %}
+                </td>
+                <td>{% if entity.porta %}<a href="{{ path('rack_edit', { 'id': entity.patch.rack.id }) }}">{{ entity.patch.rack.sala.numero }}{% endif %}</td>
+                <td>{% if entity.porta %}<a href="{{ path('rack_edit', { 'id': entity.patch.rack.id }) }}">{{ entity.patch.rack.identificacao }}</a>{% endif %}</td>
+                <td>{% if entity.porta %}<a href="{{ path('switchs_edit', { 'id': entity.porta.switch.id }) }}">{{ entity.porta.switch.identificacao }}</a>{% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% endblock %} 

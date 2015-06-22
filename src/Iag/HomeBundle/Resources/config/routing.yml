@@ -1,0 +1,11 @@
+iag_home_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IagHomeBundle:Default:index }
+
+iag_home_lista_geral:
+    path: /home/listageral
+    defaults: { _controller: IagHomeBundle:Lista:geral }
+    
+iag_home_lista_lista:
+    path: /home/lista
+    defaults: { _controller: IagHomeBundle:Lista:lista }
